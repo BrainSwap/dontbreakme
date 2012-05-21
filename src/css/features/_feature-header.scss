@@ -1,0 +1,35 @@
+@import 'mixins';
+
+header{
+  height: 1.4em;
+  nav{
+    float: right;
+    margin: 0.1em 0.4em 0 0;
+  }
+}
+
+h3#logo{
+  span{color: black;}
+  margin: 0;
+  padding: 0.15em;
+  float: left;
+  background-color: $highlight;
+  line-height: 1.4em;
+  font-size: 0.8em;
+  font-weight: bold;
+  color: white;
+}
+
+ul#main-menu{
+  font-size: 0.8em;
+  li{
+    margin-left: 0.1em;
+    a{
+      padding: 0.2em;
+      display: block;
+    }
+
+    display: inline-block;
+  }
+
+}

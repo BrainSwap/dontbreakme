@@ -1,0 +1,30 @@
+<script type="text/template" id="tmpl_partial_month">
+    <div class="cal-header">
+        <div class="cal-header-inner">
+            <h4><%= model.get('title') %></h4>
+            <ul class="days">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tues</li>
+                <li>Wed</li>
+                <li>Thur</li>
+                <li>Fri</li>
+                <li>Sat</li>
+            </ul>
+        </div>
+    </div>
+
+    <ul class="cal-body">
+        <% for (var i = 0; i < inactiveCalendarDaysStart; i++){ %>
+           <li class="disabled"><%= i + prevMonthStartCount  %></li>
+        <% }; %>
+
+        <% _.each(daysAr, function(day, count){ %>
+           <li class="cal-day<%= count + 1 %><%= day[1] == 1 ? ' hit-day' : '' %>"><a href="#"><%= count + 1 %></a></li>
+        <% }); %>
+
+        <% for (var i = 0; i < inactiveCalendarDaysEnd; i++){ %>
+           <li class="disabled"><%= i + 1 %></li>
+        <% }; %>
+    </ul>
+</script>

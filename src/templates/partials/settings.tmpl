@@ -1,0 +1,13 @@
+<script type="text/template" id="tmpl_partial_settings">
+    <form id="contact-form" class="parts" action="?contact" method="post" accept-charset="utf-8">
+        <p>Select a sound theme:</p>
+        <div class="radio-container">
+            <input id="sound-random" class="radio" type="radio" name="sound" value="random" accesskey="1"<%= model.get('sounds') == 'random' ? ' checked' : '' %>>
+            <label for="sound-random">Random</label>
+            <input id="sound-ki" class="radio" type="radio" name="sound" value="ki" accesskey="2"<%= model.get('sounds') == 'ki' ? ' checked' : '' %>>
+            <label for="sound-ki">Killer Instinct</label>
+            <input id="sound-off" class="radio" type="radio" name="sound" value="off" accesskey="3"<%= model.get('sounds') == 'off' ? ' checked' : '' %>>
+            <label for="sound-off">Off</label>
+        </div>
+    </form>
+</script>

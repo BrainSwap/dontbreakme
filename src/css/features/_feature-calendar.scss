@@ -1,0 +1,118 @@
+@import 'mixins';
+
+.month{
+  background-color: $darkshade;
+  border: solid 1px #cccccc;
+  width: 23%;
+  float: left;
+  margin: 0.5%;
+  &.active-month{
+    background-color: lightblue;
+    color: white;
+    h4{
+      text-shadow: none;
+    }
+    .cal-header li{
+      color: white;
+    }
+    .cal-body li.active-day a{
+      background-color: lightblue;
+      color: white;
+    }
+  }
+
+  h4{
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0.125em 0.125em 0.25em 0.25em;
+    text-shadow: rgba(255, 255, 255, 0.8) 1px -1px 0;
+  }
+
+  ul.days{
+    margin-bottom: 0.125em;
+  }
+
+  ul{
+    overflow: hidden;
+  }
+
+  .cal-header {
+    .cal-header-inner{
+      padding: 2px 4px;
+    }
+
+    li{
+      color: #989298;
+      text-align: center;
+      font-size: 0.625em;
+      font-weight: bold;
+      width: 14.285714285714286%;
+      float: left;
+    }
+  }
+
+  .cal-body li{
+    &.hit-day a{
+      background-color: orange !important;
+      color: white;
+    }
+
+    &.active-day.hit-day a{
+      color: black;
+    }
+
+    a{
+      font-size: inherit;
+      font-decoration: none;
+      display: block;
+    }
+    cursor: arrow;
+    font-size: 0.6875em;
+    font-weight: bold;
+    width: 14.285714285714286%;
+    height: 2.5em;
+    line-height: 2.5em;
+    background-color: white;
+    /* border: solid 1px #cccccc; */
+    border-bottom: 0;
+    border-left: 0;
+    float: left;
+    text-align: center;
+    &.disabled{
+      background-color: $lightshade;
+      color: #bbbbc0;
+    }
+  }
+}
+
+/* cinema screens */
+@media only screen and (min-width: 2000px) {
+  body{
+    font-size: 140%;
+  }
+
+  .month{
+    width: 22%;
+  }
+}
+
+/* tablet portrait */
+@media only screen and (max-width: 1331px) {
+  body{
+    font-size: 120%;
+  }
+
+  .month{
+    width: 48%;
+  }
+}
+
+/* mobile portrait */
+@media only screen and (max-width: 617px) {
+  body{
+    font-size: 150%;
+  }
+  .month{
+    width: 98%;
+  }
+}

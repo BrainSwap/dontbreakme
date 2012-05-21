@@ -1,0 +1,57 @@
+@import 'mixins';
+
+.modal-title{
+  border-bottom-right-radius: 0;
+  background-color: $lightshade;
+  height: 2em;
+  @include border-radius(10px);
+  -webkit-border-bottom-left-radius: 0;
+  -moz-border-bottom-left-radius: 0;
+  border-bottom-left-radius: 0;
+  -webkit-border-bottom-right-radius: 0;
+  -moz-border-bottom-right-radius: 0;
+  h2{
+    font-size: 1.2em;
+    line-height: 1.8em;
+    text-align: left;
+    margin: 0 0 12px 20px;
+  }
+}
+
+.modal-body{
+  padding-bottom: 20px;
+  textarea{
+    width: 142px;
+    padding-bottom: 4px;
+    font-size: 11px;
+  }
+}
+
+.modal-body-inner{
+  margin: 0.5em 1em;
+  line-height: 1.4em;
+  input.radio{
+    margin-left: 0.8em;
+    font-size: 0.9em;
+  }
+}
+
+a.modal-close{
+  position: absolute;
+  top: 0.5em;
+  right: 0.4em;
+  text-indent: -9999px;
+  width: 20px;
+  height: 20px;
+  overflow: hidden;
+  background-image: url("/images/button-close.png");
+  &:hover{
+    background-color: inherit;
+  }
+}
+
+/* Over-ride default blockUI settings */
+.blockMsg{
+  border-color: $highlight !important;
+  @include border-radius(10px);
+}

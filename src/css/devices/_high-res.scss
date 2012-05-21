@@ -1,0 +1,11 @@
+/* hi-res display button positions */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) {
+}
+
+/* mobile portrait */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (max-width: 479px) {
+}
+
+/* mobile landscape */
+@media only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 480px) and (max-width: 767px) {
+}
