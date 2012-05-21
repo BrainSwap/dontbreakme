@@ -12,7 +12,7 @@
     // Namespace for all user account data is kept.
     ns.data = {
         templates: {}, // Global templates.
-        calendars: {}, 
+        calendars: {},
         curDate: new Date(),
         sounds: {
             themes : {
@@ -82,6 +82,14 @@
         // Logic to add selected highlight on current tab.
         ns.router.bind('all', function (route, section) {
         });
+
+        // Hide the address bar.
+        if (navigator.userAgent.match('Mobile')){
+            setTimeout(function(){
+                window.scrollTo(0, 1);
+            }, 0);
+        }
+
     };
 
     // Support pushstate and dialogue popups
