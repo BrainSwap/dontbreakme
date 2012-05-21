@@ -40,6 +40,8 @@
 
   ul{
     overflow: hidden;
+	z-index:1000;
+	position:relative;
   }
 
   .cal-header {

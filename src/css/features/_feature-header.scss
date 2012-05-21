@@ -1,20 +1,19 @@
 @import 'mixins';
 
 header{
-  height: 1.4em;
+  padding:1em 2em 0;
   nav{
-    float: right;
-    margin: 0.1em 0.4em 0 0;
+    float: left;
+    margin: 0 0 0 0.4em;
   }
 }
 
 h3#logo{
   span{color: black;}
   margin: 0;
-  padding: 0.15em;
+  padding: 0.2em;
   float: left;
   background-color: $highlight;
-  line-height: 1.4em;
   font-size: 0.8em;
   font-weight: bold;
   color: white;
@@ -33,3 +32,27 @@ ul#main-menu{
   }
 
 }
+
+/* mobile portrait */
+@media only screen and (max-width: 617px) {
+	#github-ribbon{
+		display:none;
+	}
+	header {
+	    background: none repeat scroll 0 0 #FFFFFF;
+	    padding: 0;
+	    position: fixed;
+	    top: 0;
+	    width: 100%;
+	    z-index: 2000;
+	    border-bottom:1px solid #ccc;
+		nav {
+		    float: right;
+		}
+	}
+	#container {
+	    clear: both;
+	    padding-top: 1.2em;
+	}
+}
+
