@@ -10,12 +10,13 @@
 
         initialize: function(){
             _.bindAll(this, 'setActiveDayMonth');
-            this.collection.on('change', this.setActiveDayMonth);
+            this.collection.on('change:hits', this.setActiveDayMonth);
         },
 
         setActiveDayMonth: function(){
             var curDay = ns.data.curDate.getDate() - 1;
             var curMonth = ns.data.curDate.getMonth();
+
             this.$el.find('.cal-month' + curMonth).addClass('active-month').end()
                 .find('.cal-day' + curDay).addClass('active-day');
         },
