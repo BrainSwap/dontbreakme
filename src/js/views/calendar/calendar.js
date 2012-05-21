@@ -5,7 +5,6 @@
 (function(ns){
     ns.classes.views.calendar = ns.classes.views.base.extend({
         id: 'calendar',
-
         events: {
         },
 

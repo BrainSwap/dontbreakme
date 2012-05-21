@@ -1,11 +1,19 @@
 @import 'mixins';
 
+#calendar {
+   margin: 0 1em;
+}
+
 .month{
-  background-color: $darkshade;
-  border: solid 1px #cccccc;
-  width: 23%;
+   .month-inner {
+       margin: 1em;
+       border: solid 1px #cccccc;
+       background-color: $darkshade;
+  }
+  
+  
+  width: 20%;
   float: left;
-  margin: 0.5%;
   &.active-month{
     background-color: lightblue;
     color: white;
@@ -50,7 +58,6 @@
       float: left;
     }
   }
-
   .cal-body li{
     &.hit-day a{
       background-color: orange !important;
@@ -92,7 +99,7 @@
   }
 
   .month{
-    width: 22%;
+    width: 20%;
   }
 }
 
@@ -103,7 +110,7 @@
   }
 
   .month{
-    width: 48%;
+    width: 50%;
   }
 }
 
@@ -112,7 +119,10 @@
   body{
     font-size: 150%;
   }
+  #calendar, .month .month-inner {
+     margin: 0;
+  }
   .month{
-    width: 98%;
+    width: 100%;
   }
 }
