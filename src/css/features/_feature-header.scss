@@ -39,20 +39,11 @@ ul#main-menu{
 		display:none;
 	}
 	header {
-	    background: none repeat scroll 0 0 #FFFFFF;
 	    padding: 0;
-	    position: fixed;
 	    top: 0;
-	    width: 100%;
-	    z-index: 2000;
-	    border-bottom:1px solid #ccc;
 		nav {
 		    float: right;
 		}
-	}
-	#container {
-	    clear: both;
-	    padding-top: 1.2em;
 	}
 }
 
