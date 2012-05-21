@@ -11,7 +11,8 @@
 
     // Namespace for all user account data is kept.
     ns.data = {
-        templates: {}, // Global templates.
+        // Global templates.
+        templates: {},
         calendars: {},
         curDate: new Date(),
         sounds: {
@@ -82,14 +83,6 @@
         // Logic to add selected highlight on current tab.
         ns.router.bind('all', function (route, section) {
         });
-
-        // Hide the address bar.
-        if (navigator.userAgent.match('Mobile')){
-            setTimeout(function(){
-                window.scrollTo(0, 1);
-            }, 0);
-        }
-
     };
 
     // Support pushstate and dialogue popups
@@ -120,6 +113,21 @@
 
     $.blockUI.defaults.css.cursor = 'auto';
     $.blockUI.defaults.overlayCSS.cursor = 'auto';
+    $.blockUI.defaults.css = {
+        height: '200px',
+        width: '400px',
+        position: 'absolute',
+        top: '50%',
+        left: '50%',
+        marginLeft: '-150px',
+        marginTop: '-150px',
+        textAlign:	'center',
+		color:		'#000',
+		border:		'3px solid #aaa',
+		backgroundColor:'#fff',
+		cursor:		'wait',
+		maxWidth: '80%'
+    };
 
 
 })(mandible);

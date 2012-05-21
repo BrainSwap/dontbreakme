@@ -19,13 +19,19 @@
                     model : this.model
                 }),
             }));
-
             $.blockUI({
                 message: $el,
                 onUnblock: function(){
                     that.unregisterEvents();
-                }
+                }, 
             });
+            $('.blockMsg').css({
+                width:$el.width()+'px', 
+                height:$el.height()+'px', 
+                marginTop: (-$el.height())/2+'px',
+                marginLeft: (-$el.width())/2+'px'
+            });
+
 
             return this;
         },
