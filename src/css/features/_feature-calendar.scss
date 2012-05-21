@@ -93,7 +93,7 @@
 /* screens */
 @media only screen and (min-width: 960px) {
   body{
-    color: red !important;
+    color: red;
     font-size: 120%;
   }
 
@@ -123,5 +123,19 @@
   }
   .month{
     width: 100%;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  h3#logo{
+    float: none;
+    text-align: center;
+  }
+  header{
+    height: 2.5em;
+    nav{
+      float: none;
+      text-align: center;
+    }
   }
 }
