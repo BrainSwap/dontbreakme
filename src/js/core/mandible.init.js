@@ -111,25 +111,6 @@
         }
     });
 
-    $.blockUI.defaults.css.cursor = 'auto';
-    $.blockUI.defaults.overlayCSS.cursor = 'auto';
-    $.blockUI.defaults.css = {
-        height: '200px',
-        width: '400px',
-        position: 'absolute',
-        top: '50%',
-        left: '50%',
-        marginLeft: '-150px',
-        marginTop: '-150px',
-        textAlign:	'center',
-		color:		'#000',
-		border:		'3px solid #aaa',
-		backgroundColor:'#fff',
-		cursor:		'wait',
-		maxWidth: '80%'
-    };
-
-
 })(mandible);
 
 $(mandible.init);

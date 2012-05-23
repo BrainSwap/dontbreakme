@@ -5,10 +5,6 @@
 (function(ns){
     ns.classes.views.base = Backbone.View.extend({
 
-        // Render the page-specific menu.
-        renderMenu: function(amenu, currentUser){
-        },
-
         activatedPartials : false,
 
         // Loop through any view partials passed in through controller and
