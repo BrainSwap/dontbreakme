@@ -1,4 +1,4 @@
-// Brainswap global settings object
+// Mandible global settings object
 // =============================
 // Namespace for holding global settings.
 (function (bs) {

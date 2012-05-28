@@ -1,4 +1,4 @@
-// Brainswap object
+// Mandible object
 // =============================
 // Namespace for holding values and helper functions.
 (function (ns) {
@@ -11,9 +11,10 @@
 
     // Namespace for all user account data is kept.
     ns.data = {
+        user : null,
+        months : null, // collection
         // Global templates.
         templates: {},
-        calendars: {},
         curDate: new Date(),
         sounds: {
             themes : {
@@ -33,8 +34,7 @@
                 }
             }
         },
-        months: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-        monthsAr:  [[0, 31], [3, 29], [4, 31], [0, 30], [2, 31], [5, 30], [0, 31], [3, 31], [6, 30], [1, 31], [4, 30], [6, 31]] // [offset, length]
+        monthsAr:  ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October','November', 'December']
     };
 
     // Namespace for helper functions.

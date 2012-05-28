@@ -215,14 +215,6 @@
         return this;
     };
 
-    h.formatDate = function (timestamp) {
-        timestamp = parseInt(timestamp) * 1000;
-		if (isNaN(timestamp)) return '';
-        var date = new Date(timestamp);
-        var monthList = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return monthList[date.getMonth()] + ' ' + date.getDate() + ", " + date.getFullYear();
-    };
-
     h.htmlEncode = function(value){
         return value ? $('<div/>').text(value).html() : '';
     }
@@ -263,13 +255,15 @@
     // Instantiate default calendar modals into calendar collection.
     h.populateDefaultCalendarCollection = function(){
         var models = [];
-
+        var today = new Date();
+        var thisYear = today.getFullYear();
         _.each(ns.data.monthsAr, function(month, index){
+            var thisDate = new Date((index + 1) + '/1/' + thisYear);
             var thisMonth = {
                 id : index,
-                title : ns.data.months[index],
-                days : month[1],
-                firstDay : month[0]
+                title : month,
+                days :  new Date(thisYear, index + 1, 0).getDate(),
+                firstDay : thisDate.getDay()
             };
 
             models.push(new ns.classes.models.Month(thisMonth));

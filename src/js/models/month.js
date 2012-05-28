@@ -37,10 +37,8 @@
 
             // If this is the first day of the month, check
             // last day of prev month.
-            if (lastHit == 0 && prevMonth){
-                if (_.last(prevMonth.getAllHitsAr()) == 1){
-                    return true;
-                }
+            if (lastHit == 0 && prevMonth && _.last(prevMonth.getAllHitsAr()) == 1){
+                return true;
             }else{
                 return this.get('hits').indexOf(lastHit - 1) !== -1;
             }
