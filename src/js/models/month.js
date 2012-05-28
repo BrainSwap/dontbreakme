@@ -3,7 +3,7 @@
 // Represents a month.
 
 (function(ns) {
-    ns.classes.models.Calendar = Backbone.Model.extend({
+    ns.classes.models.Month = Backbone.Model.extend({
         defaults: {
             title : 'January',
             id : 0, // Index month

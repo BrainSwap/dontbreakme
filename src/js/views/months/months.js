@@ -1,10 +1,11 @@
-// Calendar View
+// Months View
 // =============================
 // All month views are contained inside this one.
 
 (function(ns){
-    ns.classes.views.calendar = ns.classes.views.base.extend({
+    ns.classes.views.Months = ns.classes.views.base.extend({
         id: 'calendar',
+
         events: {
         },
 

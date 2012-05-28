@@ -272,7 +272,7 @@
                 firstDay : month[0]
             };
 
-            models.push(new ns.classes.models.Calendar(thisMonth));
+            models.push(new ns.classes.models.Month(thisMonth));
         });
 
         return models;
