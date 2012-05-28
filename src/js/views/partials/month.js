@@ -26,7 +26,7 @@
             day = parseInt(day) - 1;
 
             this.model.toggleHit(day, function(){
-                if (that.model.onComboStreak()){
+                if (that.model.checkComboStreak()){
                     ns.helpers.playSound('combo');
                 }else{
                     ns.helpers.playSound('add');
@@ -44,7 +44,7 @@
 
             $(this.el).html(this.template({
                 model: this.model,
-                daysAr: this.model.getHitJson(),
+                daysAr: this.model.getAllHitsAr(),
                 inactiveCalendarDaysStart: inactiveCalendarDaysStart,
                 inactiveCalendarDaysEnd: inactiveCalendarDaysEnd,
                 prevMonthStartCount : prevMonthStartCount

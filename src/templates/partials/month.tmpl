@@ -20,8 +20,8 @@
            <li class="disabled"><%= i + prevMonthStartCount  %></li>
         <% }; %>
 
-        <% _.each(daysAr, function(day, count){ %>
-           <li class="cal-day<%= count + 1 %><%= day[1] == 1 ? ' hit-day' : '' %>"><a href="#"><%= count + 1 %></a></li>
+        <% _.each(daysAr, function(hit, count){ %>
+           <li class="cal-day<%= count + 1 %><%= hit == 1 ? ' hit-day' : '' %>"><a href="#"><%= count + 1 %></a></li>
         <% }); %>
 
         <% for (var i = 0; i < inactiveCalendarDaysEnd; i++){ %>

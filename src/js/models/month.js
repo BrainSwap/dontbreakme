@@ -3,14 +3,14 @@
 // Represents a month.
 
 (function(ns) {
-	var model = ns.classes.models.Calendar = Backbone.Model.extend({
+    ns.classes.models.Calendar = Backbone.Model.extend({
         defaults: {
             title : 'January',
             id : 0, // Index month
             days : 31,
             firstDay : 0,
-            lastHit : null,
-            hits: null
+            hits: null,
+            lastHit : null
         },
 
         initialize: function(){
@@ -30,14 +30,15 @@
             });
         },
 
-        onComboStreak: function(){
+        checkComboStreak: function(){
             var lastHit = this.get('lastHit');
+            // Edge case, check prev month, too.
             var prevMonth = this.getPrevMonth();
 
             // If this is the first day of the month, check
             // last day of prev month.
             if (lastHit == 0 && prevMonth){
-                if (_.last(prevMonth.getHitJson())[1] == 1){
+                if (_.last(prevMonth.getAllHitsAr()) == 1){
                     return true;
                 }
             }else{
@@ -115,15 +116,16 @@
         },
 
         // Returns an array of all days of of the month and their hit status:
-        // [[0,0], [1,1], [2,0], [3,0], [4,1],..]
-        getHitJson: function(){
-            var days = this.get('days')
+        // [0,1,1,0,0...]
+        getAllHitsAr: function(){
+            var length = this.get('days')
             var hitsAr = this.get('hits');
-            var statsAr = [];
-            for (var i = 0; i < days; i++){
-                statsAr.push([i, hitsAr.indexOf(i) == -1 ? 0 : 1]);
+            var allHits = [];
+
+            for (var i = 0; i < length; i++){
+                allHits.push(_.include(hitsAr, i) ? 1 : 0);
             }
-            return statsAr
+            return allHits;
         }
     });
 
