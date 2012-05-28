@@ -15,10 +15,10 @@
         },
 
         setActiveDayMonth: function(){
-            var curDay = ns.data.curDate.getDate() - 1;
+            var curDay = ns.data.curDate.getDate();
             var curMonth = ns.data.curDate.getMonth();
 
-            this.$el.find('.cal-month' + curMonth).addClass('active-month').end()
+            this.$el.find('.cal-month' + curMonth).addClass('active-month')
                 .find('.cal-day' + curDay).addClass('active-day');
         },
 
