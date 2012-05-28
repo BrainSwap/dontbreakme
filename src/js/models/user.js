@@ -12,13 +12,6 @@
 
         localStorage: new Backbone.LocalStorage('user'),
 
-        load: function(){
-            if (window.localStorage && localStorage.user){
-                this.fetch();
-            }
-            return this;
-        },
-
         initialize: function(){
             this.on('change:sounds', function(){
                 this.save();

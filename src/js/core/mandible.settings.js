@@ -1,12 +1,12 @@
 // Mandible global settings object
 // =============================
 // Namespace for holding global settings.
-(function (bs) {
-    bs.settings = {
+(function (ns) {
+    ns.settings = {
         apiURL: 'api.dontbreak.me'
     };
 
-    window.mandible = bs;
+    window.mandible = ns;
 })({});
 
 /* Enables CORS for all ajax calls. */

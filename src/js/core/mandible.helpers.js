@@ -1,4 +1,4 @@
-// Brainswap helpers
+// Mandible helpers
 // =============================
 // Helper functions
 

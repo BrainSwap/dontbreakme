@@ -45,7 +45,7 @@
         views:{
             partials:{},
             modals:{},
-            calendar:{}
+            months:{}
         },
         models:{},
         collections:{},
@@ -56,14 +56,12 @@
     // Main application start point.
     ns.init = function () {
         var h = ns.helpers;
-
-        var session = h.storageGet('session');
         var fragment;
 
         ns.data.user = new ns.classes.models.User;
         ns.data.user.fetch();
 
-        ns.data.templates.spinner = h.loadTemplate("tmpl_spinner");
+        // ns.data.templates.spinner = h.loadTemplate("tmpl_spinner");
 
         // Setup Contoller, Router, and main app view.
         // ===================
