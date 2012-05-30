@@ -18,6 +18,17 @@
         sounds: {
             themes : {
                 ki : {
+                    timecodes : {
+                        'orchid-laserken' : [0, 1.7],
+                        'blaster-combo' : [1.7, 4.1],
+                        'fulgore-laser' : [4.1, 7.2],
+                        'hyper-combo' : [7.4, 8.8],
+                        'monster-combo' : [9, 11.5],
+                        'perfect' : [11.7, 12.6],
+                        'super-combo' : [12.6, 14.2],
+                        'supreme-victory' : [14.4, 16.3],
+                        'ultra-combo' : [16.3, 19.6]
+                    },
                     add : 'orchid-laserken',
                     combo : ['hyper-combo', 'blaster-combo', 'super-combo', 'ultra-combo','monster-combo'],
                     month : 'perfect',
@@ -25,6 +36,14 @@
                     remove: 'fulgore-laser'
                 },
                 random : {
+                    timecodes : {
+                        'fanfare' : [0, 1.4],
+                        'applause' : [1.4, 4.2],
+                        'cheering' : [4.4, 9],
+                        'mmmm' : [9, 9.7],
+                        'whahwhah' : [9.7, 11.6],
+                        'woow' : [11.6, 12.7]
+                    },
                     add : 'fanfare',
                     combo : ['mmmm', 'woow', 'cheering', 'applause'],
                     month : 'cheering',

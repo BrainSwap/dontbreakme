@@ -237,27 +237,48 @@
         this.playSound('/sounds/' + type + '_' + sound + '.wav');
     };
 
-    h.playSound = function(action){
-        var $audioPlayer = $('#audio-player');
+    h.playSound = function(file){
         var theme = ns.data.user.get('sounds');
-        var themePack;
-        var themePackComboLength;
-        var file;
-
-        if (theme !== 'off'){
-            themePack = ns.data.sounds.themes[theme];
-            themePackComboLength = themePack[action].length;
-
-            if (action == 'combo'){
-                file = themePack[action][ Math.floor(Math.random() * themePackComboLength)];
-            }else{
-                file = ns.data.sounds.themes[theme][action];
+        var $audioPlayer;
+        var start, end;
+        var checkForSoundEnd = function(){
+            if (audioPlayer.currentTime > end){
+                $audioPlayer.trigger('pause');
+                $audioPlayer.unbind('timeupdate', checkForSoundEnd);
             }
-
-            console.log('playing sound: ', '/sounds/' + theme + '/' + file + '.wav');
-            $audioPlayer.attr('src', '/sounds/' + theme + '/' + file + '.wav');
-            $audioPlayer.trigger('play');
         }
+
+        if (theme == 'off'){
+            return;
+        }
+
+        $audioPlayer = $('#audio-player').unbind();
+        audioPlayer = $audioPlayer[0];
+        themeObj = ns.data.sounds.themes[theme];
+
+        action = themeObj[file]; // whawha
+
+
+        // If file is an array, select a random one.
+        if (action instanceof Array){
+            action = action[Math.floor(Math.random() * action.length)];
+        }
+
+        start = themeObj.timecodes[action][0];
+        end = themeObj.timecodes[action][1];
+
+        // Too bad this shorthand doesn't work on Apple Webkit!
+        // $audioPlayer.attr('src', '/sounds/' + theme + '/all.wav#t=1.7,4.0');
+        $audioPlayer[0].volume = 0.2;
+        if (audioPlayer.seekable){
+                $audioPlayer[0].currentTime = start;
+        }else{
+            $audioPlayer.bind('loadeddata', function(){
+                $audioPlayer[0].currentTime = start;
+            });
+        }
+        // Can only change currentTime after track is loaded.
+        $audioPlayer.bind('timeupdate', checkForSoundEnd).trigger('play');
     };
 
     // Instantiate default calendar modals into calendar collection.

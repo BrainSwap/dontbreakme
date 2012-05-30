@@ -8,6 +8,13 @@
 
         initialize: function(){
             this.model = ns.data.user;
+
+            // Set current sound sprite.
+            this.model.bind('change:sounds', function(model, val){
+                if (val !== 'off'){
+                    $('#audio-player').attr('src', '/sounds/' + val + '/all.wav');
+                }
+            });
         },
 
         events: {

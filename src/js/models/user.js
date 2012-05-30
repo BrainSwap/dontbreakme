@@ -20,7 +20,7 @@
         },
 
         initialize: function(){
-            this.on('change:sounds', function(){
+            this.on('change:sounds', function(model, item){
                 this.save();
             });
         }
