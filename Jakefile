@@ -470,8 +470,13 @@ function listFilesRecursive(sourceDir){
         var filesToCheck = fs.readdirSync(sourceDir);
         for(var i = 0; i < filesToCheck.length; i++) {
             var filePath = platformProofPath(sourceDir + filesToCheck[i]);
+            // Ignore hidden dot files and _underscore folders.
+            if (filePath.match(/^\..+|\/\..+/) || filePath.match(/.+\/_.+/) ){
+                continue;
+            }
             var currFile = fs.lstatSync(filePath);
             if(currFile.isDirectory()) {
+                console.log('filePath', filePath);
                 files = files.concat(listFilesRecursive(filePath+'/'));
             } else {
                 files.push(sourceDir+filesToCheck[i]);
@@ -782,23 +787,11 @@ namespace('deploy', function () {
         execLog("ssh " + QA_SERVER_USER + "@" + QA_SERVER_IP +  " './bin/" + QA_DEPLOY_SCRIPT + "'");
     });
 
-    desc('Update QA env to latest codebase in stable');
-    task('qa-stable', [], function(params) {
-        console.log('Deploying stable to ' + APP_QA_DOMAIN + '...');
-        execLog("ssh " + QA_SERVER_USER + "@" + QA_SERVER_IP +  " './bin/deploy-qa-from-stable.sh'");
-	});
-
     desc('Update prod env to latest codebase in master');
     task('prod', [], function(params) {
         console.log('Deploying to ' + APP_DOMAIN + '...');
         execLog("ssh " + PROD_SERVER_USER + "@" + PROD_SERVER_IP +  " './bin/" + PROD_DEPLOY_SCRIPT + "'");
     });
-
-    desc('Update prod env to latest codebase in stable');
-    task('prod-stable', [], function(params) {
-        console.log('Deploying stable to ' + APP_DOMAIN + '...');
-        execLog("ssh " + PROD_SERVER_USER + "@" + PROD_SERVER_IP +  " './bin/deploy-prod-from-stable.sh'");
-	});
 });
 
 /****************/
