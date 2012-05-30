@@ -222,13 +222,6 @@
         return value ? $('<div/>').html(value).text() : '';
     };
 
-    // Play random type of sound.
-    h.playRandomSound = function(type){
-        var soundAr = ns.data[type + 'Sounds'];
-        var sound = soundAr[Math.floor(Math.random() * soundAr.length)]
-        this.playSound('/sounds/' + type + '_' + sound + '.wav');
-    };
-
     h.playSound = function(file){
         var theme = ns.data.user.get('sounds');
         var $audioPlayer;
@@ -262,8 +255,8 @@
         // Too bad this shorthand doesn't work on Apple Webkit!
         // $audioPlayer.attr('src', '/sounds/' + theme + '/all.wav#t=1.7,4.0');
         $audioPlayer[0].volume = 0.2;
-        if (audioPlayer.seekable){
-                $audioPlayer[0].currentTime = start;
+        if (audioPlayer.readyState > 1){
+            $audioPlayer[0].currentTime = start;
         }else{
             $audioPlayer.bind('loadeddata', function(){
                 $audioPlayer[0].currentTime = start;

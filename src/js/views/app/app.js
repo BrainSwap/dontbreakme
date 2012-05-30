@@ -30,9 +30,14 @@
         },
 
         setTheme: function(){
+            var ext = '.mp3';
             var theme = ns.data.user.get('sounds');
+            // Most browsers support mp3 but Firefox, falling back to .ogg.
+            if ($.browser.mozilla){
+                ext = '.ogg';
+            }
             if (theme !== 'none'){
-                $('#audio-player').attr('src', '/sounds/' + theme + '/all.wav');
+                $('#audio-player').attr('src', '/sounds/' + theme + '/all' + ext);
             }
         },
 
