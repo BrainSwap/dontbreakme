@@ -1,4 +1,4 @@
-// Brainswap controller
+// Mandible controller
 // =============================
 // Sits between views and models. Creates and passes data to views.
 (function (ns) {

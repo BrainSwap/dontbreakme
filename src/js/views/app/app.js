@@ -12,11 +12,11 @@
         initialize: function(){
             this.activatePartials();
 
-            ns.data.calendars = new ns.classes.collections.Calendars(ns.helpers.populateDefaultCalendarCollection());
-            ns.data.calendars.loadSaved();
+            ns.data.months = new ns.classes.collections.Months(ns.helpers.populateDefaultCalendarCollection());
+            ns.data.months.loadSaved();
 
-            this.calendarView = new ns.classes.views.calendar({
-                collection : ns.data.calendars
+            this.monthsView = new ns.classes.views.Months({
+                collection : ns.data.months
             });
 
             ns.data.user.on('change:sounds', this.setTheme);
@@ -26,7 +26,7 @@
         },
 
         render: function(){
-            this.$el.append(this.calendarView.render().el);
+            this.$el.append(this.monthsView.render().el);
         },
 
         setTheme: function(){

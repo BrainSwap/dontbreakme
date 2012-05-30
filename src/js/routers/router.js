@@ -43,7 +43,6 @@
         // Called on Backbone.history.start.
         initialize:function () {
             console.log('Router initialize', arguments);
-
         }
     });
 

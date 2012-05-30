@@ -1,10 +1,11 @@
-// Calendar View
+// Months View
 // =============================
 // All month views are contained inside this one.
 
 (function(ns){
-    ns.classes.views.calendar = ns.classes.views.base.extend({
+    ns.classes.views.Months = ns.classes.views.base.extend({
         id: 'calendar',
+
         events: {
         },
 
@@ -14,10 +15,10 @@
         },
 
         setActiveDayMonth: function(){
-            var curDay = ns.data.curDate.getDate() - 1;
+            var curDay = ns.data.curDate.getDate();
             var curMonth = ns.data.curDate.getMonth();
 
-            this.$el.find('.cal-month' + curMonth).addClass('active-month').end()
+            this.$el.find('.cal-month' + curMonth).addClass('active-month')
                 .find('.cal-day' + curDay).addClass('active-day');
         },
 
