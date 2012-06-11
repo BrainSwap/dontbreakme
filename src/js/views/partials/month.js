@@ -16,6 +16,7 @@
             var that = this;
             _.bindAll(this, 'render');
 
+            // Add unique month class to this container.
             this.$el.addClass('cal-month' + this.model.get('id'));
             this.model.on('change:hits', this.render);
         },

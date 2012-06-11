@@ -12,9 +12,10 @@
     border: solid 1px #cccccc;
     background-color: $darkshade;
   }
-  &.active-month{
-    background-color: lightblue;
-    color: white;
+  &.active-month .month-inner{
+    -moz-box-shadow: 0 0 7px 7px #88D5F2;
+    -webkit-box-shadow: 0 0 7px #88D5F2;
+    box-shadow: 0 0 7px 7px #88D5F2;
     h4{
       text-shadow: none;
     }
